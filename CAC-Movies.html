@@ -17,235 +17,7 @@
 
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <title>Document</title>
-<style>
-body{
-    background-color: var(--dark-solid);
-    color: var(--light-font-solid);
-}
- .navbar_lista{
-    background-color: var(--primary-solid);
-    position:fixed;
-    padding: 0 var(--spacing-8) ;
-    align-items: center;
-    width: 100%;
-    top:0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 3; /*p q lo la tape el overlay*/
- }
-ul{
-   display: flex;
-   align-items: center;
-   margin:0;
-}
- .navbar_item{
-    font-size:var(--font-small);
-    margin: var(--spacing-16);
-    /* font-family: var(--base-font); */
-    background-color: var(--primary-solid);
-    padding: var(--spacing-8 );
-    border-radius: 4px;
- }
- #btn_login{
-    background-color: var(--dark-solid);
-    vertical-align:bottom;
- }
-.animate__wobble {
 
-  animation-delay: 3s;
-  animation-duration: infinite;
-
-}
-.animate__fadeInUp {
-
-animation-delay: 1s;
-animation-duration: 2s;
-animation-duration: infinite;
-
-}
-
-.section__principal{
-    background-image: url('/img/banner-bg.jpg');
-    background-size:cover;
-    background-position-y: -60px;
-    background-position: center;
-    background-repeat: no-repeat;  
-    min-height: 550px;
-} 
-.overlay {
-      position: absolute; /* Posición absoluta para superponer la capa */
-      top: 0;
-      left: 0;
-      width: 100%;
-      min-height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); 
-    }
- .navbar_item:hover, #btn_login:hover {
-    background-color: var(--primary-solid);
-    padding: var(--spacing-8) ;
-    box-shadow: 3px 3px 3px 3px var(--primary-shadow);
- }
- .container-fluid{
-    padding-top:var(--spacing-36);
-    position: relative;
-    z-index: 2; /*para que se ubique delante de overlay*/
- }
- #logo{
-  font-family: var(--base-font);
-  font-size: var(--font-small);
-  padding: 10px;
- }
-.section__find{
-   padding: 6%;
-   background-color: var(--dark-solid);
-   display: flex;
-   flex-direction: column;
-}
-.titulo__section, .parrafo__section{
-    font-size:var(--font-jumbo);
-    font-family:var(--base-font);
-}
-.titulo{
-    font-family: var(--base-font);
-    font-size: var(--font-xdisplay);
-    margin:var(--spacing-36);
-    margin-bottom: 0;
-}
-.sub-titulo{
-    margin-top: 0;
-}
-.div__find{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 1rem;
-}
-.input__find{
-
-    height:3em;
-    border-radius: 25px;
-    align-content:flex-start;
-    margin:6rem 2% 6rem 24%;
-    font-size: var(--font-small);
-    padding-left: 20px;
-    width:40%;
-}
-input::placeholder{
-
-}
-.btn__find{
-    border-radius: 20px;
-    border:2px solid var(--light-font-solid);
-    color:var(--light-font-solid);
-    font-size: var(--font-medium);
-    padding: 1rem ;
-    width:8%;
-    height:5rem;
-}
-.btn__find:hover, .btn__ant:hover, .btn__sig:hover{
-    /* border: 2px solid var(--light-font-solid); */
-    transform: scale(0.9);
-    transition: transform 0.8s ease; 
-}
-.btn__find:hover{
-    border:2px solid var(--light-font-solid);
-}
-.border-danger{
-    width: 80%;
-    margin:auto;
-}
-.section__movies{
-    background-color: var(--dark-solid);
-}
-.container__movies{
-    display:grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    justify-content: center;
-    background-color: var(--dark-solid);
-    padding-bottom: var(--spacing-28);
-}
-.movie__pic{
-    width:80%;
-}
-.movie__pic img{
-    border-radius: 5px;
-}
-.btn__ant, .btn__sig{
-  border:1px solid var(--light-font-solid);
-  width:6em;
-  height: 3em;
-  background-color: var(--primary-solid);
-    color:var(--light-font-solid);
-    font-size:var(--font-small);
-    margin:0 1em;
-    border-radius: 3px;
-}
-.row__btns{
-    display:flex;
-    justify-content: center;
-    margin:var(--spacing-36);
-    margin-bottom: var(--spacing-68);
-}
-[data-aos=fade-up] {
-    transform: translate(0, 80px);
-}
-.container__aclamadas {
-    overflow-x: scroll; 
-    white-space: nowrap; 
-    max-width: 86%; 
-    margin-bottom: var(--spacing-128);
-}
-.image-container {
-    display: flex; 
-    flex-wrap: nowrap; 
-    gap: var(--spacing-28);
-    padding-bottom: 20px; 
-    max-width: 92%;
-    margin: auto;
-}
-.image-container .movie__pic {
-     flex: 0 0 auto; 
-     width: 17%;
-}
-.movie__pic img {
-    width: 100%; 
-    height: auto; 
-}
-/* Estilo de la barra de desplazamiento */
-::-webkit-scrollbar {
-    width: 10px; /* Ancho de la barra */
-    background-color: var(--dark-solid);
-}
-/* Estilo del "pulgar" de la barra de desplazamiento */
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-solid); /* Color del "pulgar" */
-    border-radius: 3px; /* Borde redondeado del "pulgar" */
-}
-/* Estilo del "pulgar" de la barra de desplazamiento al pasar el mouse sobre él */
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555; 
-    width: 10%;
-}
-.navbar-footer{
-    background-color: var(--primary-solid);
-    padding: 0 var(--spacing-8) ;
-    align-items: center;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    bottom: 0;
-}
-#logo-footer{
-  font-family: var(--base-font);
-  padding: 10px;
-  color:  var(--dark-solid);
-  font-size: var(--font-xlarge);
- }
-
-</style>
-<script>
-
-</script>
 </head>
 <body>
 
@@ -259,9 +31,7 @@ input::placeholder{
                 <li class="navbar_item"><a href="#" class="nav_link">Registrarse</a></li>
                 <li class="navbar_item" id="btn_login"><a href="#" class="nav_link">Iniciar Sesión</a></li>
             </ul>
-
         </nav>
-
     </header>
     <main id="main"><span id="ancla"></span>
     <section class="section__principal">
@@ -350,6 +120,7 @@ input::placeholder{
         </div>
     </div>
 </section>
+</main>
 <footer>
     <nav class="navbar-footer fw-bold">
      
@@ -365,52 +136,8 @@ input::placeholder{
           </div>
     </nav>
 </footer>
-  <script>
-// $(window).scroll(function() {
-//   var scrollPos = $(window).scrollTop();
-//   var triggerPos = 900; // 
-  
-//   if (scrollPos > triggerPos) {
-//     $(".section__find").slideDown(1000);
-//   } 
-//   else {
-//     $(".section__find").slideDown(5000);
-//   }
-// });
-
-
-// $(document).ready(function(){    
-// 	 $("#imagen").click(function(){
-// 	 $(this).animate(
-// 	 {marginLeft: "+=50px"}, 60); });});
-// ----------------------------------------------------
-//     $(document).ready(function(){
-// 	    $("#imagen").mouseover(function(){
-// 	    $(this).animate( { opacity:1 }, 250 ); });
-// 	$("#imagen").mouseout(function(){
-// 	    $(this).animate({ opacity:0.5} , 250 ); });});
-// //-----------------------------------------------------------------
-//         $(document).ready(function(){
-// 			$("#titulo").hide();
-// 			$("#imagen").width(60).height(40).click(function(){   //la imagen inicia pequeña
-// 			$(this).animate({ 
-// 			marginLeft: "10px", width: "200px", height: "200px"}, 1500, function(){
-//                 $("#titulo").fadeIn(1000).delay(1000).fadeOut(1000);  
-//             });});});  //1500 es el tiempo
-//-----------------------------------------------------
-AOS.init({
-	    offset: 120,
-	    delay: 100,
-	    duration: 1000,
-	    easing: 'ease',
-
-  });
-  </script>  
-
-</main>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+<script src="./js/CAC-Movies.js"></script>
 </body>
 </html>
 </body>

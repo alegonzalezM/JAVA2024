@@ -136,7 +136,7 @@ animation-duration: 2s;
 animation-duration: infinite;
 }
 .section__principal{
-    background-image: url('../img/banner-bg.jpg');
+    background-image: url('img/banner-bg.jpg');
     background-size:cover;
     background-position-y: -60px;
     background-position: center;

@@ -40,6 +40,7 @@
 
     /* Spacings */
     --spacing-128: 12.8rem;
+    --spacing-100: 10rem;
     --spacing-68: 6.8rem;
     --spacing-36: 3.6rem;
     --spacing-28: 2.8rem;
@@ -97,6 +98,9 @@ body{
     background-color: var(--dark-solid);
     color: var(--light-font-solid);
 }
+.navbar-expand-md{
+    justify-content:space-around;
+}
  .navbar_lista{
     background-color: var(--primary-solid);
     position:fixed;
@@ -105,8 +109,17 @@ body{
     width: 100%;
     top:0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     z-index: 3; /*p q lo la tape el overlay*/
+ }
+ .navbar-expand-md .navbar-collapse{
+    display: flex;
+    justify-content: flex-end;
+    
+ }
+ .navbar-nav{
+    display: flex;
+ 
  }
 ul{
    display: flex;
@@ -116,7 +129,7 @@ ul{
  .navbar_item{
     font-size:var(--font-small);
     margin: var(--spacing-16);
-    /* font-family: var(--base-font); */
+    font-family: var(--base-font);
     background-color: var(--primary-solid);
     padding: var(--spacing-8 );
     border-radius: 4px;
@@ -124,6 +137,8 @@ ul{
  #btn_login{
     background-color: var(--dark-solid);
     vertical-align:bottom;
+    padding: var(--spacing-8 );
+    border-radius: 4px;
  }
 .animate__wobble {
   animation-delay: 3s;
@@ -153,8 +168,8 @@ animation-duration: infinite;
     }
  .navbar_item:hover, #btn_login:hover {
     background-color: var(--primary-solid);
-    padding: var(--spacing-8) ;
-    box-shadow: 3px 3px 3px 3px var(--primary-shadow);
+    /* padding: var(--spacing-8) ; */
+    box-shadow: 2px 2px 2px 2px var(--primary-shadow);
  }
  .container-fluid{
     padding-top:var(--spacing-36);
@@ -208,9 +223,13 @@ input::placeholder{
     border:2px solid var(--light-font-solid);
     color:var(--light-font-solid);
     font-size: var(--font-medium);
-    padding: 1rem ;
-    width:8%;
+    padding: 0.8rem ;
+    width: var(--spacing-68);
     height:5rem;
+}
+.btn__register{
+width:var(--spacing-128);
+
 }
 .btn__find:hover, .btn__ant:hover, .btn__sig:hover{
     /* border: 2px solid var(--light-font-solid); */
@@ -312,13 +331,67 @@ input::placeholder{
   color:  var(--dark-solid);
   font-size: var(--font-xlarge);
  }
+     @media screen and (max-width:1100px) and (min-width:768px) {
+        body{
+        margin-top: var(--spacing-36);
+        }
+        html{
+        margin: auto;
+        }
+        .overlay {
+            width: 100%;
+     
+            min-height: 140%; 
+            margin-top:var(--spacing-36);
+        }
+        .btn__register{
+            margin-bottom: var(--spacing-16);
+            }
+        .btn__find{
+            padding:0.2rem ;
+        }
+        .titulo{
+            font-size: var(--spacing-36);
+        }
+        .sub-titulo{
+            font-size: var(--spacing-24);
+        }
+        header{
+            width: 100%;
+        }
+        .navbar-expand-md .navbar-collapse{
+            justify-content: space-around;
+        }}
 
- 
-     @media screen and (max-width:950px) and (min-width:620px) {
+@media screen and (max-width:768px)  {
+           .navbar-expand-md .navbar-collapse{
+            display: none;        
+        }
+        .navbar_lista{
+            justify-content: flex-start;
+        }
+        .overlay {
+     
+            width: 100%;
+            min-height: 140%; 
+           }}
+@media screen and (max-width:575px)  {
   
+       ::-webkit-scrollbar {
+        width: 0; /* Ancho de la barra */
+    
     }
-
-    @media screen and (max-width:950px) and (min-width:620px) {
-
-
-} 
+          .overlay {
+        width: 100%;
+        min-height: 140%; 
+       }
+ 
+       .navbar_lista{
+        justify-content: center;
+       }
+       .border-danger{
+        min-width: 170%;
+        margin: auto 10%;
+       }
+              }
+        

@@ -376,22 +376,22 @@ width:var(--spacing-128);
             min-height: 140%; 
            }}
 @media screen and (max-width:575px)  {
-  
-       ::-webkit-scrollbar {
+  body{
+width: 575px;
+margin: auto;
+  }
+ hr{
+    display:none;
+  }
+    ::-webkit-scrollbar {
         width: 0; /* Ancho de la barra */
-    
-    }
-          .overlay {
-        width: 100%;
+  }
+
+    .navbar_lista{
+          justify-content: flex-start;
+  }
+    .overlay {
+        width:140%;
         min-height: 140%; 
-       }
- 
-       .navbar_lista{
-        justify-content: center;
-       }
-       .border-danger{
-        min-width: 170%;
-        margin: auto 10%;
-       }
-              }
+  }}
         

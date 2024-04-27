@@ -391,7 +391,7 @@ margin: auto;
           justify-content: flex-start;
   }
     .overlay {
-        width:140%;
+       min-width:575px;
         min-height: 140%; 
   }}
         

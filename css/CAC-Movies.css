@@ -5,20 +5,20 @@
 
 :root { /** Definir variable en css  selector root**/
     /* Palette*/
-    --primary-solid: rgb(159, 54, 71);  /** Para declarar variable se comienza con --(nombre que quiera escribir):**/
+    --primary-solid: #9f3647;  /** Para declarar variable se comienza con --(nombre que quiera escribir):**/
     --primary-shadow: rgb(140, 48, 63); 
     --primary-500: rgb(159, 54, 71,0.5); /* 0.9 transparencia del mismo color de arriba*/
     --primary-300: rgb(255, 51, 51,0.3); 
 
     --secondary-solid: #181419;
     --secondary-500: #555;
-    /* --secondary-500: rgb(29, 132, 181,0.5);
+    --secondary-shadow: #9E9E9E;
     --secondary-300: rgb(29, 132, 181,0.3); */ 
 
     --dark-solid: #1F1F1F;
-    --dark-900:  rgb(31, 31, 31,0.9);
-    --dark-600:  rgb(31, 31, 31,0.5);
-    --dark-300:  rgb(31, 31, 31,0.3); 
+    --dark-900:  rgb(42, 42, 42);
+    --dark-600:  #333333;
+    --dark-300:  rgb(42, 42, 42, 0.3);
 
     --dark-bg-solid: #30343F;
     --light-bg-solid: #FAFAFF;
@@ -165,6 +165,7 @@ animation-duration: infinite;
       width: 100%;
       min-height: 100%;
       background-color: rgba(0, 0, 0, 0.5); 
+      pointer-events: none; /* hace q los eventos atraviesen la capa y se pueda acceder al boton register*/
     }
  .navbar_item:hover, #btn_login:hover {
     background-color: var(--primary-solid);
@@ -206,6 +207,15 @@ animation-duration: infinite;
     align-items: center;
     padding-bottom: 1rem;
 }
+.btn-danger{
+    min-width:10%;
+}
+.btn-danger:hover{
+    /* border:2px solid var(--light-font-solid); */
+    transform: scale(0.95);
+    transition: transform 0.8s ease; 
+    background-color: var(--primary-shadow);
+}
 .input__find{
     height:3em;
     border-radius: 25px;
@@ -214,9 +224,6 @@ animation-duration: infinite;
     font-size: var(--font-small);
     padding-left: 20px;
     width:40%;
-}
-input::placeholder{
-
 }
 .btn__find{
     border-radius: 20px;
@@ -232,7 +239,6 @@ width:var(--spacing-128);
 
 }
 .btn__find:hover, .btn__ant:hover, .btn__sig:hover{
-    /* border: 2px solid var(--light-font-solid); */
     transform: scale(0.9);
     transition: transform 0.8s ease; 
 }
@@ -331,6 +337,94 @@ width:var(--spacing-128);
   color:  var(--dark-solid);
   font-size: var(--font-xlarge);
  }
+ /*-----------register---------*/
+ #container_register{
+     background-color: var(--dark-900);
+     max-height: 100vh;
+     overflow: hidden;
+ }
+ #container_register .overlay{
+    background-color:var(--secondary-300);
+ }
+#register_file {
+    margin: var(--spacing-8) auto;
+    width:90%;
+    background-image: url('../img/bg-register.jpg');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    min-height: 100vh;  
+}
+.check_box{
+display: inline-flex;
+justify-content: space-between;
+margin:5%;
+gap: var(--spacing-8);
+}
+
+#col_register{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 25%;
+    z-index: 2;
+    background-color: var(--dark-900);
+    padding: var(--spacing-8);
+    margin-top:var(--spacing-);
+    margin-bottom:var(--spacing-20);
+    font-size: var(--font-small);
+}
+
+.col_1{  
+display: inline-flex;
+padding-top: var(--spacing-36);
+font-family: var(--base-font);
+font-size:var(--font-xsmall) ;
+font-weight: 700;
+z-index: 1;
+
+}
+#col_register h1, .check_box{
+    margin: var(--spacing-8);
+    font-family: var(--base-font);
+    margin: var(--spacing-20) 15%;
+
+}
+#col_register ::placeholder{
+    padding: var(--spacing-8);
+    color:var(--secondary-shadow);
+    font-size: var(--font-xsmall);
+}
+#col_register .btn__register{
+    margin: auto 10%;
+    background-color: var(--primary-solid);
+}
+form{
+   margin: var(--spacing-16) auto;
+}
+input[type=text], input[type=email], input[type=password], input[type=date], .form-control {
+    flex-direction: column;
+    width:70%;
+    margin:auto;
+    padding: var(--spacing-8);
+    margin-top:var(--spacing-20);
+    border: 2px solid var(--primary-solid);
+    border-radius: var(--spacing-16);
+    background-color: #333333;
+    color: var(--secondary-shadow);
+    font-family: var(--base-font);
+    font-size: 1.3rem;
+}
+input[type=date] , .form-control{
+    font-size: 1.8rem;
+}
+.ayuda{
+    margin: 0 var(--spacing-36);
+    font-size: 1.8rem;
+    color: var(--secondary-shadow);
+}
+
+ /*-----media queries----------*/
      @media screen and (max-width:1100px) and (min-width:768px) {
         body{
         margin-top: var(--spacing-36);
@@ -377,8 +471,9 @@ width:var(--spacing-128);
            }}
 @media screen and (max-width:575px)  {
   body{
-width: 575px;
-margin: auto;
+    width: 575px;
+    margin: auto;
+    /* width:100vh; */
   }
  hr{
     display:none;
@@ -386,12 +481,15 @@ margin: auto;
     ::-webkit-scrollbar {
         width: 0; /* Ancho de la barra */
   }
-
     .navbar_lista{
-          justify-content: flex-start;
+        justify-content: flex-start;
+  }
+  .btn__register{
+    width:auto;
   }
     .overlay {
-        width:140%;
+        min-width:575px;
         min-height: 140%; 
   }}
         
+

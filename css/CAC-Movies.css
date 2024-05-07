@@ -481,6 +481,9 @@ input[type=date] , .form-control{
     ::-webkit-scrollbar {
         width: 0; /* Ancho de la barra */
   }
+  .btn__register{
+    width:auto;
+  }
     .navbar_lista{
         justify-content: flex-start;
   }
@@ -488,7 +491,7 @@ input[type=date] , .form-control{
     width:auto;
   }
     .overlay {
-        min-width:575px;
+       min-width:575px;
         min-height: 140%; 
   }}
         

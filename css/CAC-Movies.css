@@ -236,6 +236,7 @@ animation-duration: infinite;
 }
 .btn__register{
 width:var(--spacing-128);
+    z-index:3;
 
 }
 .btn__find:hover, .btn__ant:hover, .btn__sig:hover{

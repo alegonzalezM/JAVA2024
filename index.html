@@ -14,9 +14,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!--AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link  rel="stylesheet" type="text/css" href="./css/CAC-Movies.css" />
+    <link rel="icon" href="./img/favicon.ico" />
 
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <title>Document</title>
+    <title>CAC-Movies</title>
 
 </head>
 <body>
@@ -39,31 +40,21 @@
                   <a class="nav-links" href="/pages/register.html">Registrarse</a>
                 </li>
                 <li class="navbar_item" id="btn_login">
-                  <a class="nav-links"  href="#">Iniciar sesión</a>
+                  <a class="nav-links"  href="/pages/login.html">Iniciar sesión</a>
                 </li>
               </ul>
               </div>
               </nav>
               
-         <!-- <nav class="navbar_lista fw-bold">
-            <div id="logo" class="animate__animated animate__wobble"> 
-                <i class="fas fa-film" aria-hidden="true"></i>
-                <a href="../index.html">CAC-Movies</a></div>
-            <ul>
-                <li class="navbar_item"><a href="#" class="nav_link">Tendencias</a></li>
-                <li class="navbar_item"><a href="#" class="nav_link">Registrarse</a></li>
-                <li class="navbar_item" id="btn_login"><a href="#" class="nav_link">Iniciar Sesión</a></li>
-            </ul>
-        </nav> -->
-    </header>
+   </header>
     <main id="main"><span id="ancla"></span>
     <section class="section__principal">
         <div class="overlay"></div>   <!-- overlay capa p/oscurecer pantalla -->
         <div class="container">
             <div class="row">
-                <div class="col"></div>
+                <div class="col col_0"></div>
                 <div class="col-9  m-4 pt-5"><h1 class="titulo display-3 text-center fw-bold">Películas y series ilimitadas en un solo lugar</h1></div>
-                <div class="col"></div>
+                <div class="col col_0 "></div>
             </div>
             <div class="row">
                 <div class="col"></div>
@@ -94,30 +85,45 @@
  
         <div class="container container__movies ">
 
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_1.jpg" div id="imagen"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_2.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_3.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_4.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_5.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_6.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_7.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_8.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_9.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_10.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/aclamada_11.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_1.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_2.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_3.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_4.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_5.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_6.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_7.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_8.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto d-block my-4" ><img src="./img/peli_9.jpg"></picture>
-
-        </div>
-    <div class="row row__btns d-flex">
-        <button type="button" class="btn__ant">Anterior</button>
+          
+            <a href="pages/details.html"><div class="picture-container">
+                <picture class="movie__pic rounded mx-auto" ><img src="/img/aclamada_9.jpg"></picture>
+                <div class="nombre">The Green Mile</div></div></a>
+            <a href="pages/details.html"><div class="picture-container">
+                <picture class="movie__pic rounded mx-auto" ><img src="/img/aclamada_10.jpg"></picture>
+                <div class="nombre">Forrest Gump</div></div></a>
+            <a href="pages/details.html"><div class="picture-container">
+                <picture class="movie__pic rounded mx-auto" ><img src="/img/aclamada_11.jpg"></picture>
+                <div class="nombre">Pulp Fiction</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_1.jpg"></picture>
+                <div class="nombre">The Beekeeper</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_2.jpg"></picture>
+                <div class="nombre">Badland Hunters</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_3.jpg"></picture>
+                <div class="nombre">The Marvels</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_4.jpg"></picture>
+                <div class="nombre">Wonka</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_9.jpg"></picture>
+                <div class="nombre">The Masked Saint</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_5.jpg"></picture>
+                <div class="nombre">Aquaman and The Lost Kingdom</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_6.jpg"></picture>
+                <div class="nombre">Migration</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_7.jpg"></picture>
+                <div class="nombre">60 Minutes</div></div></a>
+            <a href="pages/details.html"><div class="picture-container"><picture class="movie__pic rounded mx-auto" >
+                <img src="/img/peli_8.jpg"></picture>
+                <div class="nombre">Wish</div></div></a>
+    </div>
+            <div class="row row__btns d-flex">   <button type="button" class="btn__ant">Anterior</button>
         <button type="button" class="btn__sig">Siguiente</button>
     </div>
     <hr class="border border-danger border-2 opacity-50">
@@ -126,17 +132,17 @@
     <p class="parrafo__section text-center fw-bolder mt-5">Las más aclamadas</p>
     <div class="container container__aclamadas">
         <div class="image-container overflow-auto">
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_1.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_2.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_3.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_4.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_5.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_6.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_7.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_8.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_9.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_10.jpg"></picture>
-            <picture class="movie__pic rounded mx-auto my-4"><img src="./img/aclamada_11.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_1.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_2.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_3.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_4.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_5.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_6.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_7.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_8.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_9.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_10.jpg"></picture>
+            <picture class="movie__pic rounded mx-auto my-4"><img src="/img/aclamada_11.jpg"></picture>
         </div>
     </div>
 </section>

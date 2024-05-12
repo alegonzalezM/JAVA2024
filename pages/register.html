@@ -13,26 +13,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!--AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link  rel="stylesheet" type="text/css" href="../css/CAC-Movies.css" />
+    <link  rel="stylesheet" type="text/css" href="/css/CAC-Movies.css" />
+
+    <link rel="icon" href="/img/favicon.ico" />
 
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <title>Document</title>
-   
-    <div id="container_register" class="container-fliud p-1">
+    <title>CAC-Registro</title>
+  </head>
+  <body> 
+    <div id="container_register" class="container-fluid p-1">
         <div class="overlay"></div> 
-    <div class="row" id="register_file">
-    <div class="col col_1">
-        <div id="logo" class=""> 
-        <i class="fas fa-film" aria-hidden="true"></i>
-        </div>
-        <a class="navbar-brand" id="logo" href="/CAC-Movies.html">CAC-Movies</a></div>
-    <div class="col rounded-3" id="col_register">
+        <div class="row" id="register_file">
+            <div class="col-3 col_1">
+                <div id="logo" class=""> 
+                    <i class="fas fa-film" aria-hidden="true"></i>
+                    </div>
+                    <a class="navbar-brand" id="logo" href="/index.html">CAC-Movies</a></div>
+            <div class="col-6 rounded-3" id="col_register">
         <h1 class="center display-3 fw-bold">Registro</h1>
         <div id="div_form" class="">
-        <form>
-            <input type="text" class="form-control" placeholder="Nombre">
-            <input type="text" class="form-control" placeholder="Apellido">
-            <input type="email" class="form-control" placeholder="Email">
+        <form class="formulario" action="" method="post">
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
+            <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
             <input type="password" class="form-control" placeholder="Contraseña">
             <input type="date" class="form-control" placeholder="">
             <select class="form-control">
@@ -46,21 +49,18 @@
             <label class="form-check-label" for="check">Acepto téminos y condiciones
             </label>
             </div>
-            <button type="button" class="btn btn-danger btn__register w-75 fw-bold p-4 fs-3">Registrarse</button> 
+            <button type="button" class="btn btn-danger btn__register fw-bold p-4 fs-3">Registrarse</button> 
             <p class="ayuda" >Necesitas ayuda?</p>       
          </form>
         </div>
 
     </div>
-    <div class="col"></div>
+    <div class="col-3 col_3"></div>
 </div>
 </div>
-</head>
-<body>
-
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="./js/CAC-Movies.js"></script>
+<script src="/js/CAC-Movies.js"></script>
 </body>
 </html>

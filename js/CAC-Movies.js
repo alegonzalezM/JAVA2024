@@ -5,6 +5,12 @@ AOS.init({
     easing: 'ease',
 
 });
+const btnMenu = document.querySelector(".btn-menu");
+const menuLista = document.querySelector(".menu-lista");
+
+btnMenu.addEventListener("click", function() {
+    menuLista.classList.toggle("show");
+});
 
 // $(window).scroll(function() {
 //   var scrollPos = $(window).scrollTop();

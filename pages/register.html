@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!--AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.2-dev/css/formValidation.min.css" integrity="sha512-B9GRVQaYJ7aMZO3WC2UvS9xds1D+gWQoNiXiZYRlqIVszL073pHXi0pxWxVycBk0fnacKIE3UHuWfSeETDCe7w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link  rel="stylesheet" type="text/css" href="/css/CAC-Movies.css" />
 
     <link rel="icon" href="/img/favicon.ico" />
@@ -21,18 +22,17 @@
     <title>CAC-Registro</title>
   </head>
   <body> 
-    <div id="container_register" class="container-fluid p-1">
-        <div class="overlay"></div> 
+    <div id="container_register" class="container">
         <div class="row" id="register_file">
-            <div class="col-3 col_1">
+            <div class="col_1">
                 <div id="logo" class=""> 
                     <i class="fas fa-film" aria-hidden="true"></i>
-                    </div>
-                    <a class="navbar-brand" id="logo" href="/index.html">CAC-Movies</a></div>
-            <div class="col-6 rounded-3" id="col_register">
+                    <a class="brand" href="/index.html">CAC-Movies</a>
+                </div></div>
+            <div class="col_2" id="col_register">
         <h1 class="center display-3 fw-bold">Registro</h1>
         <div id="div_form" class="">
-        <form class="formulario" action="" method="post">
+        <form class="formulario" action="#" method="get">
             <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
             <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido">
             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
@@ -49,17 +49,17 @@
             <label class="form-check-label" for="check">Acepto téminos y condiciones
             </label>
             </div>
-            <button type="button" class="btn btn-danger btn__register fw-bold p-4 fs-3">Registrarse</button> 
+            <button type="submit" class="btn btn-danger btn__register fw-bold p-4 fs-3">Registrarse</button> 
             <p class="ayuda" >Necesitas ayuda?</p>       
          </form>
         </div>
 
     </div>
-    <div class="col-3 col_3"></div>
+    
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.2-dev/js/formValidation.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/CAC-Movies.js"></script>
 </body>

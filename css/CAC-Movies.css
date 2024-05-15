@@ -643,7 +643,7 @@ color:var(--primary-solid);
           }
           .image-container .movie__pic {
             flex: 0 0 auto; 
-            width: 25%;
+            width: 30%;
        }
 
     li.navbar_item{
@@ -669,8 +669,10 @@ color:var(--primary-solid);
    padding: 0;
    overflow: hidden;
   }
- 
-
+  .row__btns{
+    margin:var(--spacing-8);
+    margin-bottom: var(--spacing-68);
+}
   #logo-footer{
     padding: 0;
   }
@@ -695,6 +697,7 @@ color:var(--primary-solid);
         min-width:600px;
         min-height: 140%; 
   }}
+
 
 
 

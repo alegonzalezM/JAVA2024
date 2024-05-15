@@ -597,7 +597,7 @@ color:var(--primary-solid);
     }
     main{
         margin-right:0;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .titulo{
         font-size: var(--font-display);
@@ -667,7 +667,7 @@ color:var(--primary-solid);
    min-width: 100%;
    margin:0;
    padding: 0;
-   overflow: hidden;
+   overflow-x: hidden;
   }
   .row__btns{
     margin:var(--spacing-8);

@@ -106,7 +106,7 @@ body{
     align-items: center;
     width: 100%;
     top:0;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     justify-content: space-between;
     z-index: 3; /*p q lo la tape el overlay*/

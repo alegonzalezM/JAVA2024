@@ -618,28 +618,22 @@ color:var(--primary-solid);
     .navbar_lista{
         justify-content: flex-start;
     }
-    html{
+    .overlay {  
+        width: 100%;
+        min-height: 140%; 
+        top:0;
+        left:2%
+        }
+    .container_login .row{
+        width: 90%;
+        margin:var(--spacing-28) auto;
         display: flex;
         flex-direction: column;
-        min-width: 100%;
+        align-items: center;
+        gap:var(--spacing-20);
         }
-        .overlay {
-     
-            width: 100%;
-            min-height: 140%; 
-            top:0;
-            left:2%
-           }
-        .container_login .row{
-            width: 90%;
-            margin:var(--spacing-28) auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap:var(--spacing-20);
-          }
-          #col_login{
-            width: 80%;
+    #col_login{
+        width: 80%;
           }
           .image-container .movie__pic {
             flex: 0 0 auto; 
@@ -651,7 +645,9 @@ color:var(--primary-solid);
     }   
       }
 @media screen and (max-width:575px) {
- 
+ .overlay{
+    display: none;
+ }
   .btn-menu{
     display:flex;
   }
@@ -663,11 +659,8 @@ color:var(--primary-solid);
     flex-direction: column;
     flex-wrap: wrap;
   }
-  html{
-   min-width: 100%;
-   margin:0;
-   padding: 0;
-   overflow-x: hidden;
+  .row{
+    justify-content: space-evenly;
   }
   .row__btns{
     margin:var(--spacing-8);
@@ -692,13 +685,5 @@ color:var(--primary-solid);
   .btn__register{
     width:auto;
   }
-  .overlay {
-        top:0;
-        min-width:600px;
-        min-height: 140%; 
-  }}
-
-
-
-
+  }
 

@@ -611,8 +611,8 @@ color:var(--primary-solid);
         grid-template-columns: 1fr 1fr;
     }
     .picture-container{
-        width:80%;
-        margin-left: 12%;
+        width: 96%;
+        margin:2%;
         padding:var(--spacing-12);
     }
     .navbar_lista{
@@ -685,5 +685,11 @@ color:var(--primary-solid);
   .btn__register{
     width:auto;
   }
+  .movie__pic{
+
   }
+  }
+
+
+
 

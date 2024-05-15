@@ -106,14 +106,12 @@ body{
     align-items: center;
     width: 100%;
     top:0;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     z-index: 3; /*p q lo la tape el overlay*/
  }
-/* .menu .navbar-collapse{
-    display: flex;
-    justify-content: flex-end;   
- } */
+
 .menu-lista{
     display: flex;
 
@@ -255,9 +253,7 @@ width:var(--spacing-128);
 }
 .container__movies{
     display:grid;
-    /* grid-template-columns: 23% 23% 23% 23%; */
     grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); /* Creamos columnas auto-ajustables */
-
     gap:var(--spacing-12);
     justify-content: center;
     background-color: var(--dark-solid);
@@ -363,7 +359,7 @@ width:var(--spacing-128);
      background-color: var(--dark-600);
 
 
-   /* overflow-y: visible; */
+
  }
  #container_register .col_1{
     display: inline-flex;
@@ -527,7 +523,8 @@ color:var(--primary-solid);
     }
  
     #col_register{
-        width: 70%;        
+        width: 70%;
+        
         margin:auto;
     }
     .col_1{
@@ -557,7 +554,7 @@ color:var(--primary-solid);
         gap:var(--spacing-8);
     }
     html{
-        overflow-x: hidden ;
+        /* overflow-x: hidden ; */
     }
     #container_register .btn-danger{
    margin-left:30%;
@@ -588,33 +585,43 @@ color:var(--primary-solid);
   }}
 
 @media screen and (max-width:768px)  {
-
-        .titulo{
-            font-size: var(--font-display);
-        }
-        .section__principal{
-         width:100%;
-         margin-left: 2%;
-        }
-        .container__movies{
- 
-            display:grid;
-            grid-template-columns: 1fr 1fr;
-  
-
-    
-        }
-        .picture-container{
-            width:80%;
-            margin-left: 12%;
-            padding:var(--spacing-12);
-        }
-        .navbar_lista{
-            justify-content: flex-start;
-        }
-        html{
-           display: flex;
-           flex-direction: column;
+    #logo{
+        padding-right: 0;
+        font-size: var(--font-medium);
+    }
+    .menu-lista-item{
+    margin:0.8rem;
+    }
+    ul{
+        padding-left: 0;
+    }
+    main{
+        margin-right:0;
+        overflow: hidden;
+    }
+    .titulo{
+        font-size: var(--font-display);
+    }
+    .section__principal{
+        width:100%;
+        margin-left: 2%;
+    }
+    .container__movies{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .picture-container{
+        width:80%;
+        margin-left: 12%;
+        padding:var(--spacing-12);
+    }
+    .navbar_lista{
+        justify-content: flex-start;
+    }
+    html{
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
         }
         .overlay {
      
@@ -633,18 +640,42 @@ color:var(--primary-solid);
           }
           #col_login{
             width: 80%;
-            
           }
-        
-      }
-@media screen and (max-width:575px)  {
+          .image-container .movie__pic {
+            flex: 0 0 auto; 
+            width: 25%;
+       }
 
+    li.navbar_item{
+        margin:.1rem;
+    }   
+      }
+@media screen and (max-width:575px) {
+ 
   .btn-menu{
     display:flex;
   }
-  .menu{
+  .btn-menu :hover{
+    cursor: pointer;
+  }
+  nav, .navbar-footer ul {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+  }
+  html{
+   min-width: 100%;
+   margin:0;
+   padding: 0;
+   overflow: hidden;
+  }
+ 
+
+  #logo-footer{
+    padding: 0;
+  }
+  .nav_link{
+    min-height: 2rem;
   }
   .menu-lista{
     display: none;
@@ -653,37 +684,18 @@ color:var(--primary-solid);
     display: inline-flex;
     flex-direction: column;
 }
- hr{
-    display:none;
-  }
-    ::-webkit-scrollbar {
-        width: 0; /* Ancho de la barra */
-  }
-    .navbar_lista{
-        justify-content: flex-start;
-  }
- 
+.col_0{
+    display: none;
+}
   .btn__register{
     width:auto;
   }
-    .overlay {
+  .overlay {
         top:0;
-        min-width:575px;
+        min-width:600px;
         min-height: 140%; 
-  } 
-  .section__movies{
-    max-width: 80%;
- margin:auto;
-  }
-  .container__movies{
- display: inline-flex;
- flex-direction: column;
-  } 
-  .picture-container{
-    margin:20%;
-  }
-  }
-        
+  }}
 
-        
+
+
 

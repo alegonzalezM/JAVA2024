@@ -4,13 +4,67 @@ AOS.init({
     duration: 1000,
     easing: 'ease',
 
-});
-const btnMenu = document.querySelector(".btn-menu");
-const menuLista = document.querySelector(".menu-lista");
+}); 
+/*scroll suave p' pant tactiles*/
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-btnMenu.addEventListener("click", function() {
-    menuLista.classList.toggle("show");
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
+/*carga header en index y details.html con Vue*/
+ const {createApp} = Vue;
+      createApp({ 
+        data(){
+        return { cabecera: 
+            `<header>
+            <nav class="menu">
+                <div id="logo" class="animate__animated animate__wobble"> 
+                    <i class="fas fa-film" aria-hidden="true"></i>
+                    <a class="brand" href="#">CAC-Movies</a>
+                </div>
+                  <ul class="menu-lista">
+                    <li class="menu-lista-item">
+                      <a class="nav-links" href="#tendencias">Tendencias</a>
+                    </li>
+                    <li class="menu-lista-item">
+                      <a class="nav-links" href="./pages/register.html">Registrarse</a>
+                    </li>
+                    <li class="menu-lista-item" id="btn_login">
+                      <a class="nav-links"  href="./pages/login.html">Iniciar sesión</a>
+                    </li> 
+                  </ul>
+                  <span class="btn-menu">
+                    <i class="fa fa-bars" id="logo-bars"></i>
+                  </span>
+                  </nav>
+                  
+            </header> `}}} ).mount("#app");
+
+/*carga footer en index y details.html con Vue*/
+
+const foot= createApp({ 
+  data(){
+  return { footer: 
+            `<footer>
+            <nav class="navbar-footer fw-bold">
+             
+                <ul>
+                    <li class="navbar_item"><a href="#" class="nav_link">Terminos y condiciones</a></li>
+                    <li class="navbar_item"><a href="#" class="nav_link">Preguntas frecuentes</a></li>
+                    <li class="navbar_item"><a href="#" class="nav_link">Ayuda</a></li>
+                    <a href="#" class="nav_link"><li class="navbar_item" id="btn_login">Administrador películas</li></a>
+        
+                </ul>
+                <div id="logo-footer"> 
+                    <a href="#ancla" target="_self"><i class="fa fa-chevron-circle-up" ></i></a>
+                  </div>
+            </nav>
+        </footer>`
+  }}}).mount("#appFoot")
 
 // $(window).scroll(function() {
 //   var scrollPos = $(window).scrollTop();

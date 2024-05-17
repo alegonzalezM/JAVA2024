@@ -447,7 +447,6 @@ input[type=date] , .form-control{
 /*------------Login--------*/
 .container_login{
     margin-top:var(--spacing-68);
-    height:auto;
     position: relative;
 }
 .container_login h1{
@@ -460,7 +459,7 @@ input[type=date] , .form-control{
 #col_login{
     width:50%;
     border: 2px solid var(--primary-solid);
-    min-height:80vh;
+
 }
 #col_login input{
     margin-top: var(--spacing-24);

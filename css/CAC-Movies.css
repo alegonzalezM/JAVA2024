@@ -769,8 +769,11 @@ input[type=date] , .form-control{
   .btn__register{
     width:auto;
   }
-  .movie__pic{
-
+.container_login .row{
+    transform: scale(1.5);
+}
+#col_login{
+    width:90%;
   }
   }
 

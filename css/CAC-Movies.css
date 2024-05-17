@@ -445,9 +445,15 @@ input[type=date] , .form-control{
     color: var(--secondary-shadow);
 }
 /*------------Login--------*/
+
 .container_login{
     margin-top:var(--spacing-68);
     position: relative;
+}
+.container_login .row{
+    flex-direction: column;
+    align-content: center;
+    row-gap: var(--spacing-36);
 }
 .container_login h1{
     color:var(--primary-solid);
@@ -455,30 +461,37 @@ input[type=date] , .form-control{
 .container_login .columna_1{
     display: flex;
     justify-content: center;
+    position: relative;
+    left:-30rem;
+
 }
 #col_login{
     width:50%;
+    row-gap: 30px;
     border: 2px solid var(--primary-solid);
 
 }
 #col_login input{
     margin-top: var(--spacing-24);
     margin-bottom: var(--spacing-24);
+
 }
 #col_login input::placeholder{
     color:var(--secondary-shadow);
     font-size: var(--font-xsmall);
     padding: var(--spacing-8) ;
+    color:var(--light-font-solid);
 }
 #col_login .check_box{
- display: inline-flex;
- align-items: center;
- font-size: var(--font-small);
- font-family: var(--base-font);
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-small);
+    font-family: var(--base-font);
 }
 #col_login button{
     background-color:#9f3647;
 }
+
 /*------Details-----------*/
 .container__details{
     background: linear-gradient(rgba(251, 246, 246, 0.5), rgba(77, 9, 9, 0.792)), url("../img/mario-bg.jpg");

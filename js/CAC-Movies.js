@@ -98,3 +98,9 @@ const foot= createApp({
 //                 $("#titulo").fadeIn(1000).delay(1000).fadeOut(1000);  
 //             });});});  //1500 es el tiempo
 //-----------------------------------------------------
+const btnMenu = document.querySelector(".btn-menu");
+const menuLista = document.querySelector(".menu-lista");
+
+btnMenu.addEventListener("click", function() {
+    menuLista.classList.toggle("show");
+});

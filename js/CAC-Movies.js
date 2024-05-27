@@ -15,6 +15,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+/*---------------------------------------------------*/ 
 /*carga header en index y details.html con Vue*/
  const {createApp} = Vue;
       createApp({ 
@@ -36,6 +37,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     <li class="menu-lista-item" id="btn_login">
                       <a class="nav-links"  href="./pages/login.html">Iniciar sesión</a>
                     </li> 
+                    <li class="menu-lista-item" id="btn_api">
+                    <a class="nav-links"  href="./pages/index_api.html">Conexión API</a>
+                  </li> 
                   </ul>
                   <span class="btn-menu">
                     <i class="fa fa-bars" id="logo-bars"></i>
@@ -66,41 +70,106 @@ const foot= createApp({
         </footer>`
   }}}).mount("#appFoot")
 
-// $(window).scroll(function() {
-//   var scrollPos = $(window).scrollTop();
-//   var triggerPos = 900; // 
-  
-//   if (scrollPos > triggerPos) {
-//     $(".section__find").slideDown(1000);
-//   } 
-//   else {
-//     $(".section__find").slideDown(5000);
-//   }
-// });
+/*-----------------------------------------------*/
 
 
-// $(document).ready(function(){    
-// 	 $("#imagen").click(function(){
-// 	 $(this).animate(
-// 	 {marginLeft: "+=50px"}, 60); });});
-// ----------------------------------------------------
-//     $(document).ready(function(){
-// 	    $("#imagen").mouseover(function(){
-// 	    $(this).animate( { opacity:1 }, 250 ); });
-// 	$("#imagen").mouseout(function(){
-// 	    $(this).animate({ opacity:0.5} , 250 ); });});
-// //-----------------------------------------------------------------
-//         $(document).ready(function(){
-// 			$("#titulo").hide();
-// 			$("#imagen").width(60).height(40).click(function(){   //la imagen inicia pequeña
-// 			$(this).animate({ 
-// 			marginLeft: "10px", width: "200px", height: "200px"}, 1500, function(){
-//                 $("#titulo").fadeIn(1000).delay(1000).fadeOut(1000);  
-//             });});});  //1500 es el tiempo
-//-----------------------------------------------------
+/*---------Activa y desactiva botones anterior y siguiente---------*/
+function actualizarBotones() {
+    const inicio = (paginaActual - 1) * peliculasPorPagina;
+    const fin = inicio + peliculasPorPagina;
+
+    if (fin >= todasLasPeliculas.length) {
+        nextBtn.classList.add("disabled");
+        nextBtn.disabled = true;
+    } else {
+        nextBtn.classList.remove("disabled");
+        nextBtn.disabled = false;
+    }
+
+    if (paginaActual === 1) {
+        prevBtn.classList.add("disabled");
+        prevBtn.disabled = true;
+    } else {
+        prevBtn.classList.remove("disabled");
+        prevBtn.disabled = false;
+    }
+}
+
+nextBtn.addEventListener('click', function() {
+    if (!this.disabled) {
+        cambiarPagina(1);
+    }
+});
+
+prevBtn.addEventListener('click', function() {
+    if (!this.disabled) {
+        cambiarPagina(-1);
+    }
+});
+
+function cambiarPagina(cambio) {
+    paginaActual += cambio;
+    mostrarPeliculas();
+    actualizarBotones();
+}
+
+/*-------------------------------*/
+
 const btnMenu = document.querySelector(".btn-menu");
 const menuLista = document.querySelector(".menu-lista");
 
 btnMenu.addEventListener("click", function() {
     menuLista.classList.toggle("show");
 });
+
+/**********Validacion login*********************************/
+
+document.getElementById('form_login').addEventListener('submit', function(e) {
+ 
+  e.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+  const username = document.getElementById('user').value;
+  const password = document.getElementById('passw').value;
+  const userValidationMessage = document.getElementById('userValidationMessage');
+  const passwValidationMessage = document.getElementById('passwValidationMessage');
+
+    if (username === '') {
+      userValidationMessage.textContent = 'Por favor, ingresa tu usuario.';
+      userValidationMessage.style.display =  'block'; // Mostrar mensaje de validación
+    }
+    else {
+        userValidationMessage.style.display = 'none'; // Ocultar mensaje de validación
+    }
+    if (password === '') {
+      passwValidationMessage.textContent = 'Por favor, ingresa tu contraseña.';
+      passwValidationMessage.style.display = 'block'; // Mostrar mensaje de validación
+
+     } else {
+      passwValidationMessage.style.display = 'none'; // Ocultar mensaje de validación
+    }
+    if (username !== '' && password !== '') {
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: username, password: password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Login exitoso');
+            // Redirigir a otra página o realizar otra acción
+        } else {
+            alert('Login fallido');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+});
+
+//-----------------------------------------------------
+// const emailRegExp =
+//   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+

@@ -16,7 +16,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 /*---------------------------------------------------*/ 
-/*carga header en index y details.html con Vue*/
+/*carga header en index con Vue*/
  const {createApp} = Vue;
       createApp({ 
         data(){
@@ -47,7 +47,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                   </nav>
                   
             </header> `}}} ).mount("#app");
-
+/*---------------------------------------------------*/ 
+/*carga header en details.html con Vue*/
+const {createApp_details} = Vue;
+createApp({ 
+  data(){
+  return { cabecera_details: 
+            `<header>
+            <nav class="menu">
+                <div id="logo" class="animate__animated animate__wobble"> 
+                    <i class="fas fa-film" aria-hidden="true"></i>
+                    <a class="brand" href="/index.html">CAC-Movies</a>
+                </div>
+                  <ul class="menu-lista">
+                    <li class="menu-lista-item">
+                      <a class="nav-links" href="/index.html#tendencias">Tendencias</a>
+                    </li>
+                    <li class="menu-lista-item">
+                      <a class="nav-links" href="register.html">Registrarse</a>
+                    </li>
+                    <li class="menu-lista-item" id="btn_login">
+                      <a class="nav-links"  href="login.html">Iniciar sesión</a>
+                    </li> 
+                    <li class="menu-lista-item" id="btn_api">
+                    <a class="nav-links"  href="index_api.html">Conexión API</a>
+                  </li> 
+                  </ul>
+                  <span class="btn-menu">
+                    <i class="fa fa-bars" id="logo-bars"></i>
+                  </span>
+                  </nav>
+                  
+            </header>`}}} ).mount("#app_details");
+/*---------------------------------------------------*/ 
 /*carga footer en index y details.html con Vue*/
 
 const foot= createApp({ 
@@ -74,46 +106,46 @@ const foot= createApp({
 
 
 /*---------Activa y desactiva botones anterior y siguiente---------*/
-function actualizarBotones() {
-    const inicio = (paginaActual - 1) * peliculasPorPagina;
-    const fin = inicio + peliculasPorPagina;
+// function actualizarBotones() {
+//     const inicio = (paginaActual - 1) * peliculasPorPagina;
+//     const fin = inicio + peliculasPorPagina;
 
-    if (fin >= todasLasPeliculas.length) {
-        nextBtn.classList.add("disabled");
-        nextBtn.disabled = true;
-    } else {
-        nextBtn.classList.remove("disabled");
-        nextBtn.disabled = false;
-    }
+//     if (fin >= todasLasPeliculas.length) {
+//         nextBtn.classList.add("disabled");
+//         nextBtn.disabled = true;
+//     } else {
+//         nextBtn.classList.remove("disabled");
+//         nextBtn.disabled = false;
+//     }
 
-    if (paginaActual === 1) {
-        prevBtn.classList.add("disabled");
-        prevBtn.disabled = true;
-    } else {
-        prevBtn.classList.remove("disabled");
-        prevBtn.disabled = false;
-    }
-}
+//     if (paginaActual === 1) {
+//         prevBtn.classList.add("disabled");
+//         prevBtn.disabled = true;
+//     } else {
+//         prevBtn.classList.remove("disabled");
+//         prevBtn.disabled = false;
+//     }
+// }
 
-nextBtn.addEventListener('click', function() {
-    if (!this.disabled) {
-        cambiarPagina(1);
-    }
-});
+// nextBtn.addEventListener('click', function() {
+//     if (!this.disabled) {
+//         cambiarPagina(1);
+//     }
+// });
 
-prevBtn.addEventListener('click', function() {
-    if (!this.disabled) {
-        cambiarPagina(-1);
-    }
-});
+// prevBtn.addEventListener('click', function() {
+//     if (!this.disabled) {
+//         cambiarPagina(-1);
+//     }
+// });
 
-function cambiarPagina(cambio) {
-    paginaActual += cambio;
-    mostrarPeliculas();
-    actualizarBotones();
-}
+// function cambiarPagina(cambio) {
+//     paginaActual += cambio;
+//     mostrarPeliculas();
+//     actualizarBotones();
+// }
 
-/*-------------------------------*/
+// /*-------------------------------*/
 
 const btnMenu = document.querySelector(".btn-menu");
 const menuLista = document.querySelector(".menu-lista");

@@ -20,8 +20,32 @@
 </head>
 <body>
 <script>traer()</script>>
-
-<div id="app"><div v-html="cabecera"></div></div>
+<header>
+    <nav class="menu">
+        <div id="logo" class="animate__animated animate__wobble"> 
+            <i class="fas fa-film" aria-hidden="true"></i>
+            <a class="brand" href="/index.html">CAC-Movies</a>
+        </div>
+          <ul class="menu-lista">
+            <li class="menu-lista-item">
+              <a class="nav-links" href="#tendencias_api">Tendencias</a>
+            </li>
+            <li class="menu-lista-item">
+              <a class="nav-links" href="register.html">Registrarse</a>
+            </li>
+            <li class="menu-lista-item" id="btn_login">
+              <a class="nav-links"  href="login.html">Iniciar sesión</a>
+            </li> 
+            <li class="menu-lista-item" id="btn_api">
+            <a class="nav-links"  href="#">Conexión API</a>
+          </li> 
+          </ul>
+          <span class="btn-menu">
+            <i class="fa fa-bars" id="logo-bars"></i>
+          </span>
+          </nav>
+          
+    </header>
 
     <main id="main"><span id="ancla"></span>
     <section class="section__principal">
@@ -43,7 +67,7 @@
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6 col-sm-12 text-center">
-                   <a href="pages/register.html"><button type="button" class="btn btn-danger btn__register mx-auto fw-bold p-4 fs-3">Registrate</button></a></div>
+                   <a href="register.html"><button type="button" class="btn btn-danger btn__register mx-auto fw-bold p-4 fs-3">Registrate</button></a></div>
                 <div class="col"></div>
         </div>
     </div>        

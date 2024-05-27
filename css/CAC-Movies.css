@@ -134,7 +134,7 @@ ul{
     display:none;
  }
 
- #btn_login{
+ #btn_login, #btn_api{
     background-color: var(--dark-solid);
     vertical-align:bottom;
     padding: var(--spacing-8 );
@@ -253,24 +253,40 @@ width:var(--spacing-128);
 }
 .container__movies{
     display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); /* Creamos columnas auto-ajustables */
-    gap:var(--spacing-12);
+    grid-template-columns: repeat(3, minmax(20%, 1fr)); /* Creamos columnas auto-ajustables */
+    grid-template-rows: repeat(3, 42 rem);
+    gap:var(--spacing-20);
     justify-content: center;
     background-color: var(--dark-solid);
     padding-bottom: var(--spacing-28);
+ 
 }
 .movie__pic img{
     border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
 }
 .picture-container{
-    margin: var(--spacing-12);
+    margin: var(--spacing-20) auto;
     border: 2px solid var(--dark-bg-solid);
     padding: var(--spacing-8);
     border-radius: 4px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    flex-grow: 1;
-   
+    align-items: center;
+    justify-content: center;
+    
+}
+.picture-container-api{
+    margin: var(--spacing-12) auto;
+    border: 2px solid var(--dark-bg-solid);
+    padding: var(--spacing-8);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:49rem; /*para que todas las peli = altura*/  
 }
 .btn__ant, .btn__sig{
   border:1px solid var(--light-font-solid);
@@ -309,10 +325,10 @@ width:var(--spacing-128);
      flex: 0 0 auto; 
      width: 17%;
 }
-.movie__pic img {
+/* .movie__pic img {
     width: 100%; 
     height: auto; 
-}
+} */
 /* Estilo de la barra de desplazamiento */
 ::-webkit-scrollbar {
     width: 10px; /* Ancho de la barra */
@@ -346,12 +362,29 @@ width:var(--spacing-128);
  }
  .nombre{
      text-align: center;
-     margin:var(--spacing-12);
+margin: auto;
     font-size: var(--font-medium);
     font-family: var(--alternative-font);
     color:var(--secondary-shadow);
-   
+    height:var(--spacing-36);
+    
  }
+ .poster-img {
+    width: 25rem; /* Ajusta el tamaño según tus necesidades */
+    height: 40rem; /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Si quieres mantener las imágenes circulares */
+}
+
+/* También puedes ajustar el contenedor para mejor presentación */
+.pelicula {
+    margin-bottom: 20px; /* Espaciado entre elementos */
+    text-align: center; /* Centra el texto e imagen */
+}
+.disabled {
+    pointer-events: none;
+
+}
+
  /*-----------register---------*/
  #container_register{
     display: flex;
@@ -419,7 +452,7 @@ width:var(--spacing-128);
 form{
    margin: var(--spacing-16) auto;
 }
-input[type=text], input[type=email], input[type=password], input[type=date], .form-control {
+input[type=text], input[type=email], input[type=password], input[type=date], input[type=user], .form-control {
     flex-direction: column;
     width:70%;
     margin:auto;
@@ -517,6 +550,20 @@ input[type=date] , .form-control{
 #col_login button{
     background-color:#9f3647;
 }
+.validation-message {
+        width: 28rem;
+        display: none;
+        background-color: var(--secondary-shadow);
+        color: #721c24;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid var(--primary-solid);
+        border-radius: 5px;
+        position:absolute;
+        top: 22rem;
+        left: 190px;
+        font-size: var(--font-medium);
+    }
 
 /*------Details-----------*/
 .container__details{
@@ -711,6 +758,7 @@ input[type=date] , .form-control{
         width: 96%;
         margin:2%;
         padding:var(--spacing-12);
+     
     }
     .navbar_lista{
         justify-content: flex-start;
@@ -732,6 +780,7 @@ input[type=date] , .form-control{
           .image-container .movie__pic {
             flex: 0 0 auto; 
             width: 30%;
+
         }
     li.navbar_item{
         margin:.1rem;
@@ -744,7 +793,7 @@ input[type=date] , .form-control{
   .btn-menu{
     display:flex;
   }
-  .btn-menu:hover{
+  .btn-menu :hover{
     cursor: pointer;
   }
   nav, .navbar-footer ul {

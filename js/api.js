@@ -1,34 +1,30 @@
+
 let todasLasPeliculas = [];
 let paginaAPI = 1;
 let paginaActual = 1;
-const maximoDePeliculas = 32; // Número máximo de películas a obtener
+const maximoDePeliculas = 33; // Número máximo de películas a obtener
 const peliculasPorPagina = 12; // Número de películas por página
-const apiKey = '8fa300a2';
-// const urlBase = `http://www.omdbapi.com/?apikey=${apiKey}&s=movie`;
-const urlBase = `https://raw.githubusercontent.com/alegonzalezM/JAVA2024/main/pages/peliculas.json`;
+const urlBase = 'https://raw.githubusercontent.com/alegonzalezM/JAVA2024/main/pages/peliculas.json';
 
+const traer_api = document.getElementById("btn_api");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
+traer_api.addEventListener('click', function() {
+    traer();
+});
 
 async function traer() {
-    while (todasLasPeliculas.length < maximoDePeliculas) {
-        try {
-            const response = await fetch(`${urlBase}&page=${paginaAPI}`);
-            const data = await response.json();
+    try {
+        const response = await fetch(urlBase);
+        const data = await response.json();
 
-            if (data.Response === "True") {
-                todasLasPeliculas = todasLasPeliculas.concat(data.Search);
-                paginaAPI++;
-            } else {
-                console.error("Error en la búsqueda:", data.Error);
-                break;
-            }
-
-        } catch (error) {
-            console.error('Error:', error);
-            break;
-        }
+        // Asumiendo que data es un array de películas
+        todasLasPeliculas = data;
+        mostrarPeliculas();
+    } catch (error) {
+        console.error('Error:', error);
     }
-    mostrarPeliculas();
 }
 
 function mostrarPeliculas() {
@@ -52,24 +48,29 @@ function mostrarPeliculas() {
     });
 
     document.querySelector(".container__movies").innerHTML = contenido;
-    if (fin >= todasLasPeliculas.length) {     //en ultima pagina boton anterior desactivado
-        nextBtn.classList.add("disabled");    
+
+    // Desactivar/activar botones de navegación
+    if (fin >= todasLasPeliculas.length) {
+        nextBtn.classList.add("disabled");
     } else {
         nextBtn.classList.remove("disabled");
     }
-    if (paginaActual === 1){                    //en pagina 1 boton sig desactivado
+
+    if (paginaActual === 1) {
         prevBtn.classList.add("disabled");
     } else {
         prevBtn.classList.remove("disabled");
     }
-
-    nextBtn.addEventListener('click', function() {
-        foco();
-    });
-    prevBtn.addEventListener('click', function() {
-        foco();
-    });
 }
+
+nextBtn.addEventListener('click', function() {
+    cambiarPagina(1);
+});
+
+prevBtn.addEventListener('click', function() {
+    cambiarPagina(-1);
+});
+
 function cambiarPagina(cambio) {
     paginaActual += cambio;
     mostrarPeliculas();
@@ -81,6 +82,5 @@ function foco() {
         movieElement.scrollIntoView({ behavior: 'smooth' });
     }
 }
-
 
 

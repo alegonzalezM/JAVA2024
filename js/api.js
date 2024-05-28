@@ -5,7 +5,7 @@ const maximoDePeliculas = 32; // Número máximo de películas a obtener
 const peliculasPorPagina = 12; // Número de películas por página
 const apiKey = '8fa300a2';
 // const urlBase = `http://www.omdbapi.com/?apikey=${apiKey}&s=movie`;
-const urlBase = `/peliculas.json`;
+const urlBase = `https://raw.githubusercontent.com/alegonzalezM/JAVA2024/main/pages/peliculas.json`;
 
 
 

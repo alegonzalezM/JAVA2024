@@ -704,12 +704,12 @@ input[type=date] , .form-control{
         grid-template-columns: 1fr 1fr 1fr;
         gap:var(--spacing-8);
     }
-    html{
-        /* overflow-x: hidden ; */
-    }
     #container_register .btn-danger{
         margin-left:30%;
     }
+    .picture-container-api{
+        height: 45rem;
+        }
     }
 @media screen and (max-width:820px) {
     .container_login{
@@ -726,7 +726,9 @@ input[type=date] , .form-control{
     }
    .container_login .col_3{
     display:none;
-   }}
+   }
+
+}
 
 @media screen and (max-width:768px)  {
     #logo{
@@ -775,8 +777,8 @@ input[type=date] , .form-control{
         gap:var(--spacing-20);
         }
     #col_login{
-
-          }
+        margin-bottom:2rem;
+        }
           .image-container .movie__pic {
             flex: 0 0 auto; 
             width: 30%;
@@ -784,53 +786,60 @@ input[type=date] , .form-control{
         }
     li.navbar_item{
         margin:.1rem;
-    }   
+    } 
+    .picture-container-api{
+        height: 47rem;
+        }  
     }
 @media screen and (max-width:575px) {
- .overlay{
-    display: none;
- }
-  .btn-menu{
-    display:flex;
-  }
-  .btn-menu :hover{
-    cursor: pointer;
-  }
-  nav, .navbar-footer ul {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  .row{
+    .overlay{
+        display: none;
+    }
+    .btn-menu{
+        display:flex;
+    }
+    .btn-menu :hover{
+        cursor: pointer;
+    }
+    nav, .navbar-footer ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .row{
     justify-content: space-evenly;
-  }
-  .row__btns{
+    }
+    .row__btns{
     margin:var(--spacing-8);
     margin-bottom: var(--spacing-68);
-}
-  #logo-footer{
+    }
+    #logo-footer{
     padding: 0;
-  }
-  .nav_link{
+    }
+    .nav_link{
     min-height: 2rem;
-  }
-  .menu-lista{
+    }
+    .menu-lista{
     display: none;
-  }
- .menu-lista.show {
+    }
+    .menu-lista.show {
     display: inline-flex;
     flex-direction: column;
-}
-.col_0{
+    }
+    .col_0{
     display: none;
-}
-  .btn__register{
-    width:auto;
-  }
-.container_login .row{
-    transform: scale(1.5);
-}
-#col_login{
-
-  }
-}
+    }
+    .btn__register{
+        width:auto;
+    }
+    .container_login .row{
+        transform: scale(1.5);
+    }
+    #col_login{
+    height:50rem;
+    margin-bottom:2rem;
+    }
+    .picture-container-api{
+        height: 40rem;
+    } 
+    }

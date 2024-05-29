@@ -484,7 +484,7 @@ input[type=date] , .form-control{
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 50vh;
     row-gap: var(--spacing-36);
 
 }

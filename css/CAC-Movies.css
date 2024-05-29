@@ -778,10 +778,11 @@ input[type=date] , .form-control{
         }
     #col_login{
         margin-bottom:2rem;
+        min-width: 40rem;
         }
-          .image-container .movie__pic {
-            flex: 0 0 auto; 
-            width: 30%;
+    .image-container .movie__pic {
+        flex: 0 0 auto; 
+        width: 30%;
 
         }
     li.navbar_item{
@@ -838,6 +839,7 @@ input[type=date] , .form-control{
     #col_login{
     height:50rem;
     margin-bottom:2rem;
+    min-width: 38rem;
     }
     .picture-container-api{
         height: 37rem;

@@ -839,8 +839,8 @@ input[type=date] , .form-control{
     #col_login{
     height:50rem;
     margin-bottom:2rem;
-    width: 26rem;
-    margin-left:-5rem;
+    width: auto;
+    margin-left:-6rem;
     }
     .picture-container-api{
         height: 37rem;

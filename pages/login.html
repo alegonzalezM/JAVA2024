@@ -20,7 +20,7 @@
     <title>Login | CAC-Registro</title>
 </head>
 <body>
-    <main>
+     <main>
     <section id="">
 
     <div class="container-fluid container_login">
@@ -30,18 +30,17 @@
         <a href="#"><div id="logo" class=""> 
         <i class="fas fa-film" aria-hidden="true"></i>
         </div></a>
-        <a class="navbar-brand" id="logo" href="../index.html">CAC-Movies</a></div>
+        <a class="navbar-brand" id="logo" href="/index.html">CAC-Movies</a></div>
     <div data-aos="zoom-in" data-aos-duration="1000" class="col-6 rounded-3" id="col_login">
         <h1 class="center fw-bold  p-5">Iniciar Sesión</h1>
         <div id="div_form">
-        <form class="" action="#" method="get">
-            <input type="email" class="form-control" placeholder="Email" name="email" id="email">
-            <input type="password" class="form-control" placeholder="Contraseña" name="pass" id="pass">
+        <form class="" id="form_login" action="#" method="post">
+            <input type="text" class="form-control" placeholder="Usuario" name="user" id="user">
+            <div id="userValidationMessage" class="validation-message"></div>
+            <input type="password" class="form-control" placeholder="Contraseña" name="passw" id="passw">
+            <div id="passwValidationMessage" class="validation-message"></div>
             <input type="submit" class="btn btn-danger btn__register fw-bold p-4 fs-3" value="Iniciar sesión">
             <div class="link__registro"><a href="../pages/register.html">Registrarse</a></div>
-   
-
-    
          </form>
         </div>
 

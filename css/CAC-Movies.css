@@ -833,6 +833,11 @@ input[type=date] , .form-control{
     .btn__register{
         width:auto;
     }
+    .container_login{
+    max-height: 80vh;
+    row-gap: var(--spacing-36);
+
+}
     .container_login .row{
         transform: scale(1.5);
     }

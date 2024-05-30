@@ -154,52 +154,42 @@ btnMenu.addEventListener("click", function() {
     menuLista.classList.toggle("show");
 });
 
-/**********Validacion login*********************************/
+/*------Validacion formulario login----*/
+document.addEventListener("DOMContentLoaded", function() {
+  const form_login = document.getElementById('form_login');
+  form_login.addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-document.getElementById('form_login').addEventListener('submit', function(e) {
- 
-  e.preventDefault(); // Evita que el formulario se envíe automáticamente
+      const username = document.getElementById('user').value;
+      const password = document.getElementById('passw').value;
+      const userValidationMessage = document.getElementById('userValidationMessage');
+      const passwValidationMessage = document.getElementById('passwValidationMessage');
 
-  const username = document.getElementById('user').value;
-  const password = document.getElementById('passw').value;
-  const userValidationMessage = document.getElementById('userValidationMessage');
-  const passwValidationMessage = document.getElementById('passwValidationMessage');
+      let isValid = true;
 
-    if (username === '') {
-      userValidationMessage.textContent = 'Por favor, ingresa tu usuario.';
-      userValidationMessage.style.display =  'block'; // Mostrar mensaje de validación
-    }
-    else {
-        userValidationMessage.style.display = 'none'; // Ocultar mensaje de validación
-    }
-    if (password === '') {
-      passwValidationMessage.textContent = 'Por favor, ingresa tu contraseña.';
-      passwValidationMessage.style.display = 'block'; // Mostrar mensaje de validación
+      if (username === '') {
+          userValidationMessage.textContent = 'Por favor, ingresa tu usuario.';
+          userValidationMessage.style.display = 'block'; // Mostrar mensaje de validación
+          isValid = false;
+      } else {
+          userValidationMessage.style.display = 'none'; // Ocultar mensaje de validación
+      }
 
-     } else {
-      passwValidationMessage.style.display = 'none'; // Ocultar mensaje de validación
-    }
-    if (username !== '' && password !== '') {
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username: username, password: password })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Login exitoso');
-            // Redirigir a otra página o realizar otra acción
-        } else {
-            alert('Login fallido');
-        }
-    })
-    .catch(error => console.error('Error:', error));
-}
+      if (password === '') {
+          passwValidationMessage.textContent = 'Por favor, ingresa tu contraseña.';
+          passwValidationMessage.style.display = 'block'; // Mostrar mensaje de validación
+          isValid = false;
+      } else {
+          passwValidationMessage.style.display = 'none'; // Ocultar mensaje de validación
+      }
+
+      if (isValid) {
+          // Aquí puedes agregar el código para enviar los datos al servidor
+          // fetch('/login', { ... });
+          console.log('Datos validados y listos para enviar.');
+      }
+  });
 });
-
 //-----------------------------------------------------
 // const emailRegExp =
 //   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

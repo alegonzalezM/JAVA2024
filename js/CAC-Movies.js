@@ -147,13 +147,6 @@ const foot= createApp({
 
 // /*-------------------------------*/
 
-const btnMenu = document.querySelector(".btn-menu");
-const menuLista = document.querySelector(".menu-lista");
-
-btnMenu.addEventListener("click", function() {
-    menuLista.classList.toggle("show");
-});
-
 /*------Validacion formulario login----*/
 document.addEventListener("DOMContentLoaded", function() {
   const form_login = document.getElementById('form_login');
@@ -194,4 +187,11 @@ document.addEventListener("DOMContentLoaded", function() {
 // const emailRegExp =
 //   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+
+const btnMenu = document.querySelector(".btn-menu");
+const menuLista = document.querySelector(".menu-lista");
+
+btnMenu.addEventListener("click", function() {
+    menuLista.classList.toggle("show");
+});
 

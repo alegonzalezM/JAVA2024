@@ -265,6 +265,7 @@ width:var(--spacing-128);
     border-radius: 5px;
     text-align: center;
     vertical-align: middle;
+    max-height: 43rem;
 }
 .picture-container{
     margin: var(--spacing-20) auto;

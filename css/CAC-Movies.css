@@ -848,7 +848,25 @@ input[type=date] , .form-control{
     width:30rem;
     margin-left:-6rem;
     }
+ .movie__pic img{
+        max-height: 35rem;
+    }
     .picture-container-api{
-        height: 37rem;
+        height: 39rem;
     } 
     }
+    @media screen and (max-width:485px) {
+    .movie__pic img{
+        max-height: 27rem;
+    }
+    .picture-container-api{
+        height: 30rem;
+    }}
+    @media screen and (max-width:375px) {
+        .movie__pic img{
+            max-height: 24rem;
+        }
+        .picture-container-api{
+            height: 26rem;
+        }
+} 

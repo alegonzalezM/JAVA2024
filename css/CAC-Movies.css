@@ -568,12 +568,11 @@ input[type=date] , .form-control{
 
 /*------Details-----------*/
 .container__details{
-    background: linear-gradient(rgba(251, 246, 246, 0.5), rgba(77, 9, 9, 0.792)), url("../img/mario-bg.jpg");
-    background-size: cover;
-    min-height: 100vh;
+    /* background: linear-gradient(rgba(251, 246, 246, 0.5), rgba(77, 9, 9, 0.792)), url(""); */
+    background-size:contain;
+    min-height: 50vh;
 }
 .container__movie{
-
     margin:10%;
     margin-top: 0;
     padding-top:6%;
@@ -584,19 +583,18 @@ input[type=date] , .form-control{
     row-gap : 2%; 
     column-gap: 5%;
     align-items: stretch;
-
+    background: transparent;
 }
 .image__movie{
     position: relative;
     top:100px;
-   width:100%; 
-   margin:2%;
-   margin-bottom: 0;
-   grid-column-start: 1;
-   grid-column-end: 2;
-   grid-row-start: 1;
-   grid-row-end: 4;
-
+    width:100%; 
+    margin:2%;
+    margin-bottom: 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
 }
 .image__movie img{
     border-radius: 20px;
@@ -634,7 +632,6 @@ input[type=date] , .form-control{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    
 }
 .fas{
     padding-right: var(--spacing-8);
@@ -834,21 +831,16 @@ input[type=date] , .form-control{
     .btn__register{
         width:auto;
     }
-    .container_login{
-    max-height: 80vh;
-    row-gap: var(--spacing-36);
-
-}
     .container_login .row{
         transform: scale(1.5);
     }
     #col_login{
-    height:50rem;
-    margin-bottom:2rem;
-    width:30rem;
-    margin-left:-6rem;
+        height:50rem;
+        margin-bottom:2rem;
+        width:30rem;
+        margin-left:-6rem;
     }
- .movie__pic img{
+    .movie__pic img{
         max-height: 35rem;
     }
     .picture-container-api{
